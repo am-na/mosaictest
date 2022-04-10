@@ -51,12 +51,11 @@ public class mosaicTest extends Frame{
 		
 		
 		
-		public ArrayList<Integer> regionAverage(BufferedImage src) {
+		public ArrayList<Integer> regionAverage(BufferedImage src) { //goes through each til (50x50 squares of source image, average colour then returns)
 			
 			int avgCol= 0;
 
 			ArrayList<Integer> results = new ArrayList<Integer>();
-			
 			
 			for (int i = 0; i < width; i += tileW ) {
 				for (int j = 0; j <  height; j += tileH) {
@@ -122,8 +121,7 @@ public class mosaicTest extends Frame{
 			int r = 0;
 			int g = 0;
 			int b = 0;
-			
-		
+				
 			int avgR = 0;
 			int avgG = 0;
 			int avgB = 0;
@@ -149,7 +147,6 @@ public class mosaicTest extends Frame{
 					avgB = (int) (b / num);
 
 					//System.out.println("R: " + avgR + "G: " + avgG + "B: " + avgB);
-
 					if (avgR > 255)
 						avgR = 255;
 					if (avgG > 255)
@@ -166,9 +163,7 @@ public class mosaicTest extends Frame{
 					
 					averageColor = new Color(avgR, avgG, avgB);
 					c = averageColor.getRGB();
-					
-					
-					
+
 				}
 			}
 			
@@ -206,7 +201,7 @@ public class mosaicTest extends Frame{
 				float try2 = (region.get(w))/50000;
 				float diff = Math.abs(try1-try2);
 				
-//				float diff = (Math.abs((k) - results.get(w)));
+//				float diff = (Math.abs((k) - results.get(w))); //tile val and k is from region
 				System.out.println("TILE val " + try1 + "  K  " + try2 + "  DIFF " + diff);
 
 //				System.out.println("TILE val " + t + "  K  " + results.get(w) + "  DIFF " + diff);
